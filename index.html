@@ -17,13 +17,69 @@
      with (processingInstance) {
         size(600, 600); 
         frameRate(60);
- PImage b;
+//Special thanks to stephen.mason.jones and Bob Lyon for changing the background to an image
+//background{
+var size1 = random(3, 5);
+background(0, 0, 0);
+    for(var i = 0; i < width; i+=5){
+        noLoop();
+        fill(255, 255, 255);
+        ellipse(i+random(width-width, width)-random(1, 100), i+random(height-height, height)-random(1, 100), size1, size1);
+        }
+    var starBackground = get(0, 0, width, height);
+//}
+var d1 = 0;
+var d2 = 0;
+var t = 0;
+var e = new PVector(width/2, height/2);
+var ew = new PVector(0, 0);
+var scene = 0;
+var colors = new PVector(255, 0, 0);
+var f = createFont("monospace");
+   draw = function() {
+      if(scene === 0){
+     image(starBackground, 0, 0);
+     d1 += 0.0119;
+     d2 += 0.1;
+     textFont(f, 200);
+     fill(colors.x, colors.y, colors.z);
+     text("0" + floor(d1) + "/" + floor(d2), width/2-302, height/2+65);
+     if(d1 >= 3){
+         d1 = 3;
+     } 
+     if(d2 >= 27){
+         d2 = 27;
+         t += 0.015;
+         noFill();
+         stroke(255, 0, 0);
+         ew.x += 15;
+         ew.y += 15;
+         ellipse(e.x, e.y, ew.x, ew.y);
+         colors.x += 0;
+         if(colors.y <= 255){
+         colors.y += 10;
+         colors.z += 10;
+         } else {
+             colors.y -= 255;
+             colors.z -= 255;
+         }
+     }
+     if(ew.x >= 600){
+         ew.x = 0;
+         ew.y = 0;
+     }
+     if(t >= 5){
+         scene = 1;
+     }
+     }
+     if(scene === 1){
+         stroke(255, 255, 255);
+         image(starBackground, 0, 0);
+     }
+   };
+   //for pixel art
+  //www.khanacademy.org/computer-programming/pixel-art-32/6543471133884416
 
-    b = loadImage("https://seedname101.github.io/march27/backgrounds.png");
-
-    image(b, 0, 0);
-
-   
 
 
     }};
