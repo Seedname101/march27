@@ -20,17 +20,7 @@
      with (processingInstance) {
         size(600, 600); 
         frameRate(60);
-//Special thanks to stephen.mason.jones and Bob Lyon for changing the background to an image
-//background{
-var size1 = random(3, 5);
-background(0, 0, 0);
-    for(var i = 0; i < width; i+=5){
-        noLoop();
-        fill(255, 255, 255);
-        ellipse(i+random(width-width, width)-random(1, 100), i+random(height-height, height)-random(1, 100), size1, size1);
-        }
-    
-//}
+
 var d1 = 0;
 var d2 = 0;
 var t = 0;
@@ -41,7 +31,7 @@ var colors = new PVector(255, 0, 0);
 var f = createFont("monospace");
    draw = function() {
       if(scene === 0){
-     
+     background(0, 0, 0);
      d1 += 0.0119;
      d2 += 0.1;
      textFont(f, 200);
