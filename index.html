@@ -7,9 +7,11 @@
    background-image: url("https://seedname101.github.io/march27/backgrounds.png");
    }
 video.center {
-display: block;
-margin-left: auto;
-margin-right: auto;
+ position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
 } 
    h1{
    color:white;
@@ -23,6 +25,30 @@ margin-right: auto;
    a{
    color: red;
    }
+   .content {
+  position: fixed;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.5);
+  color: white;
+  width: 100%;
+  padding: 20px;
+}
+
+/* Style the button used to pause/play the video */
+#myBtn {
+  width: 200px;
+  font-size: 18px;
+  padding: 10px;
+  border: none;
+  background: #000;
+  color: #fff;
+  cursor: pointer;
+}
+
+#myBtn:hover {
+  background: #ddd;
+  color: black;
+}
   </style>
 </head>
  <body>
@@ -31,10 +57,14 @@ margin-right: auto;
   <source src="https://seedname101.github.io/march27/March 27.mp4" type="video/mp4">
    Oops. The browser your using doesn't support videos! Try chrome, firefox or safari instead! -Julian Dominguez 
 </video> 
-  <p> From Julian Dominguez
+  <div class="content">
+  <h1>Happy 46th Birthday!</h1>
+  <p>From Julian Dominguez
   <a href = "https://seedname101.github.io/march27/March 27.mp4" download>
-   Click here to download the video.
-  </a>
+   <button id = "myBtn">
+    Click here to download the video.</button></p>
+  <!-- Use a button to pause/play the video with JavaScript -->
+</div>
   </p>
  </body>
 
